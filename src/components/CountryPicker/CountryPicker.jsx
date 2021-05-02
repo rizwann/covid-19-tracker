@@ -5,7 +5,7 @@ import {fetchCountries} from '../../api'
 import { useEffect } from 'react'
 import { useState } from 'react'
 
-function CountryPicker() {
+function CountryPicker({handleCountrySwitch}) {
 
 const [loadedCountries, setLoadedCountries] = useState([])
 
@@ -21,7 +21,7 @@ fetchCountryAPI()
     return (
        
            <FormControl className={styles.formcontrol}>
-               <NativeSelect>
+               <NativeSelect defaultValue='' onChange={(e)=> handleCountrySwitch(e.target.value)} >
                    <option value='global'>Global</option>
                    {loadedCountries.map((country,i)=> <option key={i} value={country}>{country}</option>)}
                </NativeSelect>
