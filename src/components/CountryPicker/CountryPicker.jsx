@@ -22,7 +22,7 @@ fetchCountryAPI()
        
            <FormControl className={styles.formcontrol}>
                <NativeSelect defaultValue='' onChange={(e)=> handleCountrySwitch(e.target.value)} >
-                   <option value='global'>Global</option>
+                   <option value=''>Global</option>
                    {loadedCountries.map((country,i)=> <option key={i} value={country}>{country}</option>)}
                </NativeSelect>
 
